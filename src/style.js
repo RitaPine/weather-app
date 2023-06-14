@@ -30,7 +30,10 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+
+  celcTemp = response.data.temperature.current;
+
+  temperatureElement.innerHTML = Math.round(celcTemp);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
@@ -57,7 +60,7 @@ function handleSubmit(event) {
 
 function showfahrLink(event) {
   event.preventDefault();
-  let fahrTemp = (`${temperature}` * 9) / 5 + 32;
+  let fahrTemp = (celcTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrTemp);
 }
