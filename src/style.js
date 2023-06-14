@@ -65,6 +65,12 @@ function showfahrLink(event) {
   temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 
+function showfcelcLink(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celcTemp);
+}
+
 let celcTemp = null;
 
 let form = document.querySelector("#SearchForm");
@@ -72,5 +78,8 @@ form.addEventListener("submit", handleSubmit);
 
 let fahrLink = document.querySelector("#fahrLink");
 fahrLink.addEventListener("click", showfahrLink);
+
+let celcLink = document.querySelector("#celcLink");
+celcLink.addEventListener("click", showfcelcLink);
 
 search("London");
