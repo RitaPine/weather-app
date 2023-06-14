@@ -19,6 +19,7 @@ ul {
 li {
   color: #9aa0a6;
   display: block;
+  text-transform: capitalize;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -34,4 +35,27 @@ li {
   padding: 20px;
   border: 1px solid #daddda;
   border-radius: 5px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.weatherTemprature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
+.weatherTemprature strong {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.weatherTemprature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
