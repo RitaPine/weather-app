@@ -60,13 +60,19 @@ function handleSubmit(event) {
 
 function showfahrLink(event) {
   event.preventDefault();
-  let fahrTemp = (celcTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
+  //update active interaction
+  celcLink.classList.remove("active");
+  //update far toactive when clicked
+  fahrLink.classList.add("active");
+  let fahrTemp = (celcTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 
 function showfcelcLink(event) {
   event.preventDefault();
+  celcLink.classList.add("active");
+  fahrLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celcTemp);
 }
