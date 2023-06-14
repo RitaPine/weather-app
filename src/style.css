@@ -16,4 +16,19 @@ h1 {
   font-weight: 100;
   line-height: 28px;
   text-align: left;
+  margin-bottom: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  color: #9aa0a6;
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
 }
