@@ -56,8 +56,20 @@ li:first-letter {
   line-height: 1;
 }
 
+a:link {
+  text-decoration: none;
+}
 .weatherTemprature .units {
   position: relative;
   font-size: 16px;
   top: -34px;
+}
+
+.weatherTemprature .active {
+  color: black;
+  cursor: default;
+}
+
+.weatherTemprature .active:hover {
+  text-decoration: none;
 }
