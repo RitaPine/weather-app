@@ -54,6 +54,20 @@ function handleSubmit(event) {
   cityInputElement = document.querySelector("#cityInput");
   search(cityInputElement.value);
 }
-search("London");
+
+function showfahrLink(event) {
+  event.preventDefault();
+  let fahrTemp = (`${temperature}` * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrTemp);
+}
+
+let celcTemp = null;
+
 let form = document.querySelector("#SearchForm");
 form.addEventListener("submit", handleSubmit);
+
+let fahrLink = document.querySelector("#fahrLink");
+fahrLink.addEventListener("click", showfahrLink);
+
+search("London");
