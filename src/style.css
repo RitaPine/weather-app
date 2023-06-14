@@ -19,7 +19,6 @@ ul {
 li {
   color: #9aa0a6;
   display: block;
-  text-transform: capitalize;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -27,6 +26,9 @@ li {
   line-height: 19px;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
 .weatherApp-wrapper {
   max-width: 600px;
   margin: 30px auto;
