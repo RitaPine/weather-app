@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes} `;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
@@ -48,9 +49,12 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
-
+function getForcast(coordinates) {
+  let apiKey = "2fffe23940fcdata45965eb10o0309a4";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -73,6 +77,8 @@ function displayTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForcast(response.data.coordinates);
 }
 
 function search(city) {
@@ -118,4 +124,3 @@ let celcLink = document.querySelector("#celcLink");
 celcLink.addEventListener("click", showfcelcLink);
 
 search("London");
-displayForecast();
